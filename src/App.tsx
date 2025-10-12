@@ -391,7 +391,6 @@ export default function App() {
         </div>
       </section>
 
-
       <section id="kontak" className="py-24 bg-gray-800/50 backdrop-blur-sm">
         <div className="container mx-auto px-6 max-w-4xl">
           <div className="text-center mb-16">
@@ -407,16 +406,18 @@ export default function App() {
 
           <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-gray-700 p-4 sm:p-6 md:p-8 lg:p-12">
             <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+              {/* Kolom Kiri - Email & LinkedIn */}
               <div>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-cyan-50 mb-4 sm:mb-6">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-cyan-50 mb-4 sm:mb-6 text-center md:text-left">
                   Hubungi Saya
                 </h3>
 
-                <div className="space-y-4">
-                  <div className="flex items-center gap-4 p-4 rounded-xl bg-gray-800/50 border border-gray-700 hover:border-cyan-400/50 transition">
-                    <div className="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center">
+                <div className="space-y-3 sm:space-y-4">
+                  {/* Email */}
+                  <div className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg md:rounded-xl bg-gray-800/50 border border-gray-700 hover:border-cyan-400/50 transition-colors duration-300">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
                       <svg
-                        className="w-6 h-6 text-cyan-400"
+                        className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-400"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -429,19 +430,21 @@ export default function App() {
                         />
                       </svg>
                     </div>
-                    <div>
-                      <p className="text-gray-400 text-sm">Email</p>
-                      <p className="text-cyan-50 font-medium">
+                    <div className="min-w-0 flex-1">
+                      <p className="text-gray-400 text-xs sm:text-sm mb-1">
+                        Email
+                      </p>
+                      <p className="text-cyan-50 font-medium text-sm sm:text-base break-all">
                         charlesmarvin4321@gmail.com
                       </p>
                     </div>
                   </div>
 
-
-                  <div className="flex items-center gap-4 p-4 rounded-xl bg-gray-800/50 border border-gray-700 hover:border-cyan-400/50 transition">
-                    <div className="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center">
+                  {/* LinkedIn */}
+                  <div className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg md:rounded-xl bg-gray-800/50 border border-gray-700 hover:border-cyan-400/50 transition-colors duration-300">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
                       <svg
-                        className="w-6 h-6 text-cyan-400"
+                        className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-400"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -454,9 +457,11 @@ export default function App() {
                         />
                       </svg>
                     </div>
-                    <div>
-                      <p className="text-gray-400 text-sm">LinkedIn</p>
-                      <p className="text-cyan-50 font-medium">
+                    <div className="min-w-0 flex-1">
+                      <p className="text-gray-400 text-xs sm:text-sm mb-1">
+                        LinkedIn
+                      </p>
+                      <p className="text-cyan-50 font-medium text-sm sm:text-base break-all">
                         linkedin.com/in/carlesmarvin
                       </p>
                     </div>
@@ -464,18 +469,22 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="flex flex-col justify-center mt-14">
-                <div className="space-y-4">
-
+              {/* Kolom Kanan - Instagram & WhatsApp */}
+              <div className="flex flex-col justify-center mt-8 md:mt-0">
+                <div className="space-y-3 sm:space-y-4">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-cyan-50 mb-4 sm:mb-6 text-center md:text-left">
+                    Sosmed 
+                  </h3>
+                  {/* Instagram */}
                   <a
-                    href="https://instagram.com/https://www.instagram.com/carlsmrvn/"
+                    href="https://instagram.com/carlsmrvn"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-4 rounded-lg bg-gray-800/50 border border-gray-700 hover:border-cyan-400/50 transition"
+                    className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg md:rounded-xl bg-gray-800/50 border border-gray-700 hover:border-cyan-400/50 transition-colors duration-300 group"
                   >
-                    <div className="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-cyan-500/30 transition-colors duration-300">
                       <svg
-                        className="w-6 h-6 text-cyan-400"
+                        className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-400 group-hover:text-cyan-300 transition-colors duration-300"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -492,24 +501,39 @@ export default function App() {
                         <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
                       </svg>
                     </div>
-                    <div>
-                      <p className="text-gray-400 text-sm mb-1">Instagram</p>
-                      <p className="text-cyan-50 font-medium text-base">
-                        @carlesmarvin
+                    <div className="min-w-0 flex-1">
+                      <p className="text-gray-400 text-xs sm:text-sm mb-1">
+                        Instagram
+                      </p>
+                      <p className="text-cyan-50 font-medium text-sm sm:text-base group-hover:text-cyan-300 transition-colors duration-300">
+                        @carlsmrvn
                       </p>
                     </div>
+                    <svg
+                      className="w-4 h-4 text-gray-400 group-hover:text-cyan-400 transition-colors duration-300 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
                   </a>
 
-
+                  {/* WhatsApp */}
                   <a
-                    href="https://wa.me/6281234567890"
+                    href="https://wa.me/6283807362506"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-4 rounded-lg bg-gray-800/50 border border-gray-700 hover:border-cyan-400/50 transition"
+                    className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg md:rounded-xl bg-gray-800/50 border border-gray-700 hover:border-cyan-400/50 transition-colors duration-300 group"
                   >
-                    <div className="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-cyan-500/30 transition-colors duration-300">
                       <svg
-                        className="w-6 h-6 text-cyan-400"
+                        className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-400 group-hover:text-cyan-300 transition-colors duration-300"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -518,12 +542,27 @@ export default function App() {
                         <path d="M17.47 14.29l-2.18-.63a.71.71 0 0 0-.68.18l-.47.48c-.56.56-1.47.56-2.03 0l-.97-.97a1.4 1.4 0 0 1 0-2.03l.48-.47a.71.71 0 0 0 .18-.68l-.63-2.18a.7.7 0 0 0-.67-.49h-.35a4.18 4.18 0 0 0-4.18 4.18c0 2.92 2.38 5.3 5.3 5.3a4.18 4.18 0 0 0 4.18-4.18v-.35a.7.7 0 0 0-.49-.67z" />
                       </svg>
                     </div>
-                    <div>
-                      <p className="text-gray-400 text-sm mb-1">WhatsApp</p>
-                      <p className="text-cyan-50 font-medium text-base">
-                        +6283807362506
+                    <div className="min-w-0 flex-1">
+                      <p className="text-gray-400 text-xs sm:text-sm mb-1">
+                        WhatsApp
+                      </p>
+                      <p className="text-cyan-50 font-medium text-sm sm:text-base group-hover:text-cyan-300 transition-colors duration-300">
+                        +62 838-0736-2506
                       </p>
                     </div>
+                    <svg
+                      className="w-4 h-4 text-gray-400 group-hover:text-cyan-400 transition-colors duration-300 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
                   </a>
                 </div>
               </div>
