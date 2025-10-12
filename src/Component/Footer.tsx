@@ -1,4 +1,4 @@
-import React from "react";
+
 
 // Ikon yang dibutuhkan oleh Footer
 const GithubIcon = ({ className }: { className?: string }) => (
