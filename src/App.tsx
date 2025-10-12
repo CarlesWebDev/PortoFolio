@@ -5,6 +5,7 @@ import Tabungan from "./assets/Tabungan.png";
 import STI from "./assets/STI.png";
 import AAP from "./assets/AAP.png";
 import TIM from "./assets/TIM.png";
+import MobileApps from "./assets/MobileApps.png";
 
 export default function App() {
   return (
@@ -252,7 +253,7 @@ export default function App() {
             </h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
               Beberapa karya terbaik yang menunjukkan kemampuan dan passion saya
-              dalam pengembangan web
+              dalam pengembangan web and App development.
             </p>
             <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto rounded-full mt-4"></div>
           </div>
@@ -333,6 +334,19 @@ export default function App() {
                 ],
                 code: "#",
               },
+              {
+                title: "Sales-App",
+                desc: "Aplikasi mobile untuk tim penjualan yang memungkinkan mereka mengelola prospek, melacak aktivitas penjualan, dan mengakses data pelanggan secara real-time.",
+                img: MobileApps,
+                tags: [
+                  "React.Js(Tsx)",
+                  "Expo",
+                  "TailwindCss(NativeWind)",
+                  "SpringBoot",
+                  "Zustand",
+                ],
+                code: "#",
+              },
             ].map((project, index) => (
               <div
                 key={index}
@@ -377,7 +391,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* Contact Section dengan form yang elegan */}
+
       <section id="kontak" className="py-24 bg-gray-800/50 backdrop-blur-sm">
         <div className="container mx-auto px-6 max-w-4xl">
           <div className="text-center mb-16">
@@ -423,7 +437,7 @@ export default function App() {
                     </div>
                   </div>
 
-                  {/* LinkedIn */}
+
                   <div className="flex items-center gap-4 p-4 rounded-xl bg-gray-800/50 border border-gray-700 hover:border-cyan-400/50 transition">
                     <div className="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center">
                       <svg
@@ -452,7 +466,7 @@ export default function App() {
 
               <div className="flex flex-col justify-center mt-14">
                 <div className="space-y-4">
-                  {/* Instagram */}
+
                   <a
                     href="https://instagram.com/https://www.instagram.com/carlsmrvn/"
                     target="_blank"
@@ -486,7 +500,7 @@ export default function App() {
                     </div>
                   </a>
 
-                  {/* WhatsApp */}
+
                   <a
                     href="https://wa.me/6281234567890"
                     target="_blank"
