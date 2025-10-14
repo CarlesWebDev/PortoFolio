@@ -430,14 +430,16 @@ export default function App() {
                         />
                       </svg>
                     </div>
-                    <div className="min-w-0 flex-1">
-                      <p className="text-gray-400 text-xs sm:text-sm mb-1">
-                        Email
-                      </p>
-                      <p className="text-cyan-50 font-medium text-sm sm:text-base break-all">
-                        charlesmarvin4321@gmail.com
-                      </p>
-                    </div>
+                    <a href="mailto:charlesmarvin4321@gmail.com">
+                      <div className="min-w-0 flex-1">
+                        <p className="text-gray-400 text-xs sm:text-sm mb-1">
+                          Email
+                        </p>
+                        <p className="text-cyan-50 font-medium text-sm sm:text-base break-al hover:text-cyan-400">
+                          charlesmarvin4321@gmail.com
+                        </p>
+                      </div>
+                    </a>
                   </div>
 
                   {/* LinkedIn */}
@@ -457,14 +459,21 @@ export default function App() {
                         />
                       </svg>
                     </div>
-                    <div className="min-w-0 flex-1">
-                      <p className="text-gray-400 text-xs sm:text-sm mb-1">
-                        LinkedIn
-                      </p>
-                      <p className="text-cyan-50 font-medium text-sm sm:text-base break-all">
-                        linkedin.com/in/carlesmarvin
-                      </p>
-                    </div>
+                    <a
+                      href="https://www.linkedin.com/in/carles-marvin-3a01a4336/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1"
+                    >
+                      <div className="min-w-0 flex-1">
+                        <p className="text-gray-400 text-xs sm:text-sm mb-1">
+                          LinkedIn
+                        </p>
+                        <p className="text-cyan-50 font-medium text-sm sm:text-base break-all hover:text-cyan-400">
+                          linkedin.com/in/carlesmarvin
+                        </p>
+                      </div>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -473,7 +482,7 @@ export default function App() {
               <div className="flex flex-col justify-center mt-8 md:mt-0">
                 <div className="space-y-3 sm:space-y-4">
                   <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-cyan-50 mb-4 sm:mb-6 text-center md:text-left">
-                    Sosmed 
+                    Sosmed
                   </h3>
                   {/* Instagram */}
                   <a
