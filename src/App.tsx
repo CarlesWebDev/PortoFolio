@@ -58,7 +58,7 @@ export default function App() {
             </a>
             <a
               href="#kontak"
-              className="border border-cyan-400/50 hover:border-cyan-400 hover:bg-cyan-400/10 text-cyan-400 font-semibold py-3 px-8 rounded-full text-lg transition-all duration-300 ease-in-out transform hover:scale-105 inline-flex items-center gap-2"
+              className="border border-cyan-400/50 hover:border-cyan-400 hover:bg-cyan-400/10 text-cyan-400 font-semibold py-3 px-8 rounded-full text-lg transition-all duration-300 ease-in-out transform hover:scale-105 inline-flex  active:bg-cyan-700  items-center gap-2"
             >
               <span>Hubungi Saya</span>
               <svg
@@ -265,14 +265,14 @@ export default function App() {
                 desc: "Platform pengelolaan tabungan siswa berbasis web dengan fitur pencatatan transaksi real-time, manajemen akun, dan dashboard statistik interaktif.",
                 img: Tabungan,
                 tags: ["Laravel 11", "Node.js", "MySQL"],
-                code: "#",
+                code: "https://github.com/CarlesWebDev/Tabungan",
               },
               {
                 title: "Bloggers App",
                 desc: "Bloggers App adalah aplikasi berbasis web yang memungkinkan pengguna untuk membuat, membaca, mengedit, dan menghapus artikel blog mereka secara mudah dan interaktif.",
                 img: "https://placehold.co/600x400/1F2937/93C5FD?text=Not+Image",
                 tags: ["Bootstrap", "Laravel 11", "Mysql"],
-                code: "#",
+                code: "https://gitlab.com/oo5832246/blogger",
               },
               {
                 title: "STI",
@@ -366,7 +366,7 @@ export default function App() {
                   </div>
                 </div>
 
-                <div className="p-6">
+                <div className="p-6 active:bg-cyan-800">
                   <h3 className="text-xl font-bold mb-3 text-cyan-50">
                     {project.title}
                   </h3>
@@ -383,6 +383,37 @@ export default function App() {
                         {tag}
                       </span>
                     ))}
+                  </div>
+
+                  <div className="">
+                    {project.code !== "#" ? (
+                      <a
+                        href={project.code}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 font-semibold transition"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="w-5 h-5"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"
+                          />
+                        </svg>
+                        View Code
+                      </a>
+                    ) : (
+                      <span className="text-gray-500 text-sm italic">
+                        Under Company License
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>
@@ -404,15 +435,14 @@ export default function App() {
             <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto rounded-full mt-4"></div>
           </div>
 
-          <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-gray-700 p-4 sm:p-6 md:p-8  lg:p-12">
+          <div className="bg-gray-900/50  active:text-cyan-700  backdrop-blur-sm rounded-xl sm:rounded-2xl border border-gray-700 p-4 sm:p-6 md:p-8  lg:p-12">
             <div className="grid md:grid-cols-2 grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-6 lg:gap-8">
               <div>
                 <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-cyan-50 mb-4 sm:mb-6 text-center md:text-left">
                   Hubungi Saya
                 </h3>
 
-                <div className="space-y-3 sm:space-y-4">
-
+                <div className="space-y-3 sm:space-y-4 ">
                   <div className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg md:rounded-xl bg-gray-800/50 border border-gray-700 hover:border-cyan-400/50 transition-colors duration-300">
                     <div className="w-10 h-10 sm:w-12 sm:h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
                       <svg
@@ -430,11 +460,11 @@ export default function App() {
                       </svg>
                     </div>
                     <a href="mailto:charlesmarvin4321@gmail.com">
-                      <div className="min-w-0 flex-1">
-                        <p className="text-gray-400 text-xs sm:text-sm mb-1">
+                      <div className="min-w-0  flex-1">
+                        <p className="text-cyan-400 text-xs sm:text-sm mb-1">
                           Email
                         </p>
-                        <p className="text-cyan-50 font-medium text-sm sm:text-base break-all hover:text-cyan-400">
+                        <p className="text-cyan-50 font-medium active:text-cyan-700 text-sm sm:text-base break-all hover:text-cyan-400">
                           charlesmarvin4321@gmail.com
                         </p>
                       </div>
@@ -464,11 +494,11 @@ export default function App() {
                       className="flex-1"
                     >
                       <div className="min-w-0 flex-1">
-                        <p className="text-gray-400 text-xs sm:text-sm mb-1">
+                        <p className="text-cyan-400 text-xs sm:text-sm mb-1">
                           LinkedIn
                         </p>
-                        <p className="text-cyan-50 font-medium text-sm sm:text-base break-all hover:text-cyan-400">
-                          linkedin.com/in/carlesmarvin
+                        <p className="text-cyan-50 font-medium  active:text-cyan-700  text-sm sm:text-base break-all hover:text-cyan-400">
+                          carlesmarvin
                         </p>
                       </div>
                     </a>
@@ -507,10 +537,10 @@ export default function App() {
                       </svg>
                     </div>
                     <div className="min-w-0 flex-1">
-                      <p className="text-gray-400 text-xs sm:text-sm mb-1">
+                      <p className="text-cyan-400 text-xs sm:text-sm mb-1">
                         Instagram
                       </p>
-                      <p className="text-cyan-50 font-medium text-sm sm:text-base group-hover:text-cyan-300 transition-colors duration-300">
+                      <p className="text-cyan-50 font-medium text-sm  active:text-cyan-700  sm:text-base group-hover:text-cyan-300 transition-colors duration-300">
                         @carlsmrvn
                       </p>
                     </div>
@@ -547,10 +577,10 @@ export default function App() {
                       </svg>
                     </div>
                     <div className="min-w-0 flex-1">
-                      <p className="text-gray-400 text-xs sm:text-sm mb-1">
+                      <p className="text-cyan-400 text-xs sm:text-sm mb-1">
                         WhatsApp
                       </p>
-                      <p className="text-cyan-50 font-medium text-sm sm:text-base group-hover:text-cyan-300 transition-colors duration-300">
+                      <p className="text-cyan-50 font-medium  active:text-cyan-700  text-sm sm:text-base group-hover:text-cyan-300 transition-colors duration-300">
                         +62 838-0736-2506
                       </p>
                     </div>
