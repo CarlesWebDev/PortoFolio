@@ -50,7 +50,7 @@ function Footer() {
             <GithubIcon className="w-6 h-6" />
           </a>
           <a
-            href="#"
+            href="https://www.linkedin.com/in/carles-marvin-3a01a4336/"
             className="text-gray-400 hover:text-cyan-400 transition-colors"
           >
             <LinkedinIcon className="w-6 h-6" />
