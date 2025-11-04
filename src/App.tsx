@@ -404,16 +404,15 @@ export default function App() {
             <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto rounded-full mt-4"></div>
           </div>
 
-          <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-gray-700 p-4 sm:p-6 md:p-8 lg:p-12">
-            <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
-              {/* Kolom Kiri - Email & LinkedIn */}
+          <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-gray-700 p-4 sm:p-6 md:p-8  lg:p-12">
+            <div className="grid md:grid-cols-2 grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-6 lg:gap-8">
               <div>
                 <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-cyan-50 mb-4 sm:mb-6 text-center md:text-left">
                   Hubungi Saya
                 </h3>
 
                 <div className="space-y-3 sm:space-y-4">
-                  {/* Email */}
+
                   <div className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg md:rounded-xl bg-gray-800/50 border border-gray-700 hover:border-cyan-400/50 transition-colors duration-300">
                     <div className="w-10 h-10 sm:w-12 sm:h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
                       <svg
@@ -435,14 +434,13 @@ export default function App() {
                         <p className="text-gray-400 text-xs sm:text-sm mb-1">
                           Email
                         </p>
-                        <p className="text-cyan-50 font-medium text-sm sm:text-base break-al hover:text-cyan-400">
+                        <p className="text-cyan-50 font-medium text-sm sm:text-base break-all hover:text-cyan-400">
                           charlesmarvin4321@gmail.com
                         </p>
                       </div>
                     </a>
                   </div>
 
-                  {/* LinkedIn */}
                   <div className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg md:rounded-xl bg-gray-800/50 border border-gray-700 hover:border-cyan-400/50 transition-colors duration-300">
                     <div className="w-10 h-10 sm:w-12 sm:h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
                       <svg
@@ -478,13 +476,11 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Kolom Kanan - Instagram & WhatsApp */}
               <div className="flex flex-col justify-center mt-8 md:mt-0">
                 <div className="space-y-3 sm:space-y-4">
                   <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-cyan-50 mb-4 sm:mb-6 text-center md:text-left">
                     Sosmed
                   </h3>
-                  {/* Instagram */}
                   <a
                     href="https://instagram.com/carlsmrvn"
                     target="_blank"
@@ -533,7 +529,6 @@ export default function App() {
                     </svg>
                   </a>
 
-                  {/* WhatsApp */}
                   <a
                     href="https://wa.me/6283807362506"
                     target="_blank"
