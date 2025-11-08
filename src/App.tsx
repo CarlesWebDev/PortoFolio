@@ -5,6 +5,7 @@ import Tabungan from "./assets/Tabungan.png";
 import STI from "./assets/STI.png";
 import AAP from "./assets/AAP.png";
 import TIM from "./assets/TIM.png";
+import BLOGFY from './assets/BLOGFY.jpg'
 import MobileApps from "./assets/MobileApps.png";
 
 export default function App() {
@@ -270,7 +271,7 @@ export default function App() {
               {
                 title: "Bloggers App",
                 desc: "Bloggers App adalah aplikasi berbasis web yang memungkinkan pengguna untuk membuat, membaca, mengedit, dan menghapus artikel blog mereka secara mudah dan interaktif.",
-                img: "https://placehold.co/600x400/1F2937/93C5FD?text=Not+Image",
+                img: BLOGFY,
                 tags: ["Bootstrap", "Laravel 11", "Mysql"],
                 code: "https://gitlab.com/oo5832246/blogger",
               },
