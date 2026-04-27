@@ -6,6 +6,7 @@ import STI from "./assets/STI.png";
 import AAP from "./assets/AAP.png";
 import TIM from "./assets/TIM.png";
 import BLOGFY from './assets/BLOGFY.jpg'
+import SIPASAR from './assets/SIPASAR.png';
 import MobileApps from "./assets/MobileApps.png";
 
 export default function App() {
@@ -192,10 +193,10 @@ export default function App() {
                               skill.level === "Expert"
                                 ? "bg-gradient-to-r from-cyan-400 to-blue-500 w-full"
                                 : skill.level === "Advanced"
-                                ? "bg-cyan-500 w-4/5"
-                                : skill.level === "Intermediate"
-                                ? "bg-cyan-400 w-2/3"
-                                : "bg-cyan-300 w-1/2"
+                                  ? "bg-cyan-500 w-4/5"
+                                  : skill.level === "Intermediate"
+                                    ? "bg-cyan-400 w-2/3"
+                                    : "bg-cyan-300 w-1/2"
                             }`}
                           />
                         </div>
@@ -228,15 +229,15 @@ export default function App() {
                                 skill.level === "Expert"
                                   ? "bg-gradient-to-r from-cyan-400 to-blue-500 w-full"
                                   : skill.level === "Advanced"
-                                  ? "bg-cyan-500 w-4/5"
-                                  : skill.level === "Intermediate"
-                                  ? "bg-cyan-400 w-2/3"
-                                  : "bg-cyan-300 w-1/2"
+                                    ? "bg-cyan-500 w-4/5"
+                                    : skill.level === "Intermediate"
+                                      ? "bg-cyan-400 w-2/3"
+                                      : "bg-cyan-300 w-1/2"
                               }`}
                             />
                           </div>
                         </div>
-                      )
+                      ),
                     )}
                   </div>
                 </div>
@@ -347,6 +348,13 @@ export default function App() {
                   "Zustand",
                 ],
                 code: "#",
+              },
+              {
+                title: "School sarana prasarana Management System",
+                desc: "Platform Pengaduan Sarana Prasarana Sekolah Yang membantu Petugas dalam mengelola dan menyelesaikan keluhan terkait sarana dan prasarana sekolah.",
+                img: SIPASAR,
+                tags: ["Laravel 11", "Node.js", "MySQL", 'Alpine.js', 'TailwindCss', 'sweetalert2'],
+                code: "https://github.com/CarlesWebDev/UKK",
               },
             ].map((project, index) => (
               <div
