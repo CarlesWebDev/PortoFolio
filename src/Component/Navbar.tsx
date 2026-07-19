@@ -1,105 +1,89 @@
-import  { useState } from "react";
+import { useState } from "react";
 
-// Ikon yang dibutuhkan oleh Navbar
-const MenuIcon = ({ className }: { className?: string }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={className}
-  >
-    <line x1="4" x2="20" y1="12" y2="12" />
-    <line x1="4" x2="20" y1="6" y2="6" />
-    <line x1="4" x2="20" y1="18" y2="18" />
-  </svg>
-);
-
-const XIcon = ({ className }: { className?: string }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={className}
-  >
-    <path d="M18 6 6 18" />
-    <path d="m6 6 12 12" />
-  </svg>
-);
-
-function Navbar() {
+export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const navLinks = [
+  
+  const links = [
     { name: "Tentang", href: "#tentang" },
     { name: "Projek", href: "#projek" },
     { name: "Kontak", href: "#kontak" },
   ];
 
   return (
-    <nav className="bg-gray-900/80 backdrop-blur-md fixed w-full top-0 z-50">
-      <div className="container mx-auto px-6 py-4">
-        <div className="flex justify-end items-center">
-          {/* Menu Desktop */}
-          <div className="hidden md:flex space-x-6 items-center">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-gray-300 hover:text-cyan-400 transition-colors font-medium"
-              >
-                {link.name}
-              </a>
-            ))}
-            <a
-              href="#kontak"
-              className="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded-lg transition-transform duration-300 ease-in-out transform hover:scale-105"
-            >
-              Hubungi Saya
-            </a>
-          </div>
+    <nav className="bg-slate-950/70 backdrop-blur-xl fixed w-full top-0 z-50 border-b border-white/5">
+      <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+        <span className="font-bold text-lg text-white tracking-tight flex items-center gap-2">
+          <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-500 to-sky-600 flex items-center justify-center text-sm text-white shadow-lg shadow-cyan-500/20">
+            CM
+          </span>
+          <span className="hidden sm:inline">
+            Carles<span className="text-cyan-400">Marvin</span>
+          </span>
+        </span>
 
-          {/* Tombol Menu Mobile */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-white focus:outline-none"
+        {/* Desktop Menu */}
+        <div className="hidden md:flex items-center gap-1">
+          {links.map((l) => (
+            <a
+              key={l.name}
+              href={l.href}
+              className="text-sm font-medium text-slate-400 hover:text-white px-4 py-2 rounded-lg hover:bg-white/5 transition-all"
             >
-              {isOpen ? <XIcon /> : <MenuIcon />}
-            </button>
-          </div>
+              {l.name}
+            </a>
+          ))}
+          <a
+            href="#kontak"
+            className="ml-3 bg-white text-slate-900 hover:bg-slate-200 text-sm font-semibold py-2.5 px-5 rounded-lg transition-all"
+          >
+            Hubungi Saya
+          </a>
         </div>
 
-        {/* Menu Mobile */}
-        {isOpen && (
-          <div className="md:hidden mt-4">
-            <div className="flex flex-col space-y-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="text-gray-300 hover:text-cyan-400 transition-colors block text-center py-2 rounded-md bg-gray-800"
-                >
-                  {link.name}
-                </a>
-              ))}
-             
-            </div>
-          </div>
-        )}
+        {/* Mobile Menu Button */}
+        <div className="flex items-center gap-2 md:hidden">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-slate-300 p-2"
+            aria-label="Toggle menu"
+          >
+            {isOpen ? (
+              <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path d="M18 6 6 18M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <line x1="4" x2="20" y1="6" y2="6" />
+                <line x1="4" x2="20" y1="12" y2="12" />
+                <line x1="4" x2="20" y1="18" y2="18" />
+              </svg>
+            )}
+          </button>
+        </div>
       </div>
+
+      {/* Mobile Dropdown Menu */}
+      {isOpen && (
+        <div className="md:hidden px-6 pb-6 flex flex-col gap-1 border-t border-white/5 pt-4 bg-slate-950">
+          {links.map((l) => (
+            <a
+              key={l.name}
+              href={l.href}
+              onClick={() => setIsOpen(false)}
+              className="text-slate-400 hover:text-white font-medium py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
+            >
+              {l.name}
+            </a>
+          ))}
+          <a
+            href="#kontak"
+            onClick={() => setIsOpen(false)}
+            className="bg-white text-slate-900 font-semibold text-center py-3 rounded-lg mt-2"
+          >
+            Hubungi Saya
+          </a>
+        </div>
+      )}
     </nav>
   );
 }
-
-export default Navbar;
