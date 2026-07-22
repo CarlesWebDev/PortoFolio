@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import IMG from "./assets/Image.jpg";
 import Tabungan from "./assets/Tabungan.png";
 import STI from "./assets/STI.png";
@@ -48,13 +47,6 @@ export default function App() {
       ],
     },
   ];
-
-  const levelColor: Record<string, string> = {
-    Expert: "bg-[#fcd535]",
-    Advanced: "bg-[#0ecb81]",
-    Intermediate: "bg-[#707a8a]",
-    Beginner: "bg-[#929aa5]",
-  };
 
   const levelTextColor: Record<string, string> = {
     Expert:
