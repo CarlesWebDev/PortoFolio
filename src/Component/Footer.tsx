@@ -71,16 +71,18 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-slate-950 border-t border-white/5">
+    <footer className="bg-[#fafafa] dark:bg-[#0b0e11] border-t border-[#eaecef] dark:border-[#2b3139]">
       <div className="max-w-6xl mx-auto px-6 py-10">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-3">
-            <span className="w-9 h-9 rounded-lg bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center text-sm font-bold text-white shadow-lg shadow-indigo-500/20">
+            <span className="w-9 h-9 rounded-md bg-[#fcd535] flex items-center justify-center text-sm font-bold text-[#181a20]">
               CM
             </span>
             <div className="text-left">
-              <p className="text-sm font-semibold text-white">Carles Marvin</p>
-              <p className="text-xs text-slate-500">Full-Stack Developer</p>
+              <p className="text-sm font-semibold text-[#181a20] dark:text-white">
+                Carles Marvin
+              </p>
+              <p className="text-xs text-[#707a8a]">Full-Stack Developer</p>
             </div>
           </div>
 
@@ -92,7 +94,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={s.label}
-                className="w-10 h-10 flex items-center justify-center rounded-lg border border-white/5 bg-white/[0.02] text-slate-400 hover:text-white hover:border-indigo-500/50 hover:bg-indigo-500/10 transition-all"
+                className="w-10 h-10 flex items-center justify-center rounded-md border border-[#eaecef] dark:border-[#2b3139] bg-white dark:bg-[#1e2329] text-[#707a8a] hover:text-[#181a20] dark:hover:text-white hover:border-[#fcd535]/40 hover:bg-[#fcd535]/10 transition-colors"
               >
                 {s.icon}
               </a>
@@ -100,8 +102,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 pt-6 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-3">
-          <p className="text-xs text-slate-600">
+        <div className="mt-8 pt-6 border-t border-[#eaecef] dark:border-[#2b3139] flex flex-col sm:flex-row justify-between items-center gap-3">
+          <p className="text-xs text-[#929aa5] dark:text-[#707a8a]">
             © {new Date().getFullYear()} Carles Marvin. All rights reserved.
           </p>
         </div>

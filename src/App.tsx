@@ -11,28 +11,6 @@ import Footer from "./Component/Footer";
 import Navbar from "./Component/Navbar";
 
 export default function App() {
-  const [darkMode, setDarkMode] = useState(true);
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "light") {
-      setDarkMode(false);
-    } else {
-      setDarkMode(true);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
-  }, [darkMode]);
-
-
   const skillCategories = [
     {
       category: "Frontend",
@@ -72,21 +50,18 @@ export default function App() {
   ];
 
   const levelColor: Record<string, string> = {
-    Expert: "bg-cyan-500 dark:bg-cyan-500",
-    Advanced: "bg-sky-500 dark:bg-sky-500",
-    Intermediate: "bg-slate-400 dark:bg-slate-500",
-    Beginner: "bg-slate-300 dark:bg-slate-600",
+    Expert: "bg-[#fcd535]",
+    Advanced: "bg-[#0ecb81]",
+    Intermediate: "bg-[#707a8a]",
+    Beginner: "bg-[#929aa5]",
   };
 
   const levelTextColor: Record<string, string> = {
     Expert:
-      "text-cyan-600 dark:text-cyan-300 bg-cyan-100 dark:bg-cyan-500/10 border-cyan-200 dark:border-cyan-500/30",
-    Advanced:
-      "text-sky-600 dark:text-sky-300 bg-sky-100 dark:bg-sky-500/10 border-sky-200 dark:border-sky-500/30",
-    Intermediate:
-      "text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-500/10 border-slate-200 dark:border-slate-500/30",
-    Beginner:
-      "text-slate-500 dark:text-slate-500 bg-slate-100 dark:bg-slate-500/10 border-slate-200 dark:border-slate-500/30",
+      "text-[#181a20] bg-[#fcd535]/90 dark:text-[#181a20] dark:bg-[#fcd535] border-transparent",
+    Advanced: "text-[#0ecb81] bg-[#0ecb81]/10 border-[#0ecb81]/30",
+    Intermediate: "text-[#707a8a] bg-[#707a8a]/10 border-[#707a8a]/20",
+    Beginner: "text-[#929aa5] bg-[#929aa5]/10 border-[#929aa5]/20",
   };
 
   const projects = [
@@ -182,22 +157,19 @@ export default function App() {
   ];
 
   return (
-    <div className="bg-slate-100 text-slate-800 dark:bg-slate-950 dark:text-slate-300 antialiased overflow-x-hidden selection:bg-cyan-500 selection:text-white transition-colors duration-300">
+    <div className="bg-white text-[#181a20] dark:bg-[#0b0e11] dark:text-[#eaecef] antialiased overflow-x-hidden selection:bg-[#fcd535] selection:text-[#181a20] transition-colors duration-300 font-sans">
       <Navbar />
 
       <section
         id="hero"
         className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden"
       >
-        {/* Background decoration */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 -left-32 w-96 h-96 bg-cyan-300/30 dark:bg-cyan-600/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-sky-300/30 dark:bg-sky-600/10 rounded-full blur-3xl"></div>
           <div
-            className="absolute inset-0 opacity-[0.04] dark:opacity-[0.015]"
+            className="absolute inset-0 opacity-[0.04] dark:opacity-[0.03]"
             style={{
               backgroundImage:
-                "linear-gradient(rgb(15 23 42) 1px, transparent 1px), linear-gradient(90deg, rgb(15 23 42) 1px, transparent 1px)",
+                "linear-gradient(rgb(112 122 138) 1px, transparent 1px), linear-gradient(90deg, rgb(112 122 138) 1px, transparent 1px)",
               backgroundSize: "64px 64px",
             }}
           ></div>
@@ -205,74 +177,65 @@ export default function App() {
 
         <div className="max-w-6xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-5 gap-12 items-center relative z-10">
           <div className="space-y-7 order-2 lg:order-1 lg:col-span-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-200/50 dark:bg-white/5 border border-slate-300 dark:border-white/10 backdrop-blur-sm">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#f5f5f5] dark:bg-[#1e2329] border border-[#eaecef] dark:border-[#2b3139]">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0ecb81] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#0ecb81]"></span>
               </span>
-              <span className="text-xs font-medium text-slate-600 dark:text-slate-400">
+              <span className="text-xs font-medium text-[#707a8a]">
                 Tersedia untuk proyek baru
               </span>
             </div>
 
             <div className="space-y-3">
-              <p className="text-sm font-medium text-cyan-600 dark:text-cyan-400 tracking-widest uppercase">
-                Hello, World!
+              <p className="text-sm font-semibold text-[#fcd535] tracking-widest uppercase">
+                Hello, Everyone!
               </p>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] text-slate-900 dark:text-white tracking-tight">
-                Saya{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-sky-600 dark:from-cyan-400 dark:to-sky-500">
-                  Carles Marvin
-                </span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] text-[#181a20] dark:text-white tracking-tight">
+                Saya <span className="text-[#fcd535]">Carles Marvin</span>
               </h1>
             </div>
 
-            <p className="text-lg text-slate-600 dark:text-slate-400 max-w-xl leading-relaxed">
-              <span className="font-semibold text-slate-900 dark:text-slate-200">
+            <p className="text-lg text-[#707a8a] dark:text-[#929aa5] max-w-xl leading-relaxed">
+              <span className="font-semibold text-[#181a20] dark:text-[#eaecef]">
                 Full-Stack Developer
               </span>{" "}
               dan{" "}
-              <span className="font-semibold text-slate-900 dark:text-slate-200">
+              <span className="font-semibold text-[#181a20] dark:text-[#eaecef]">
                 App Developer
               </span>{" "}
               yang bersemangat menciptakan pengalaman digital yang{" "}
-              <span className="text-cyan-600 dark:text-cyan-400 font-medium">
-                bermakna
-              </span>{" "}
-              dan{" "}
-              <span className="text-cyan-600 dark:text-cyan-400 font-medium">
-                berdampak
-              </span>
-              .
+              <span className="text-[#fcd535] font-semibold">bermakna</span> dan{" "}
+              <span className="text-[#fcd535] font-semibold">berdampak</span>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
               <a
                 href="#projek"
-                className="px-7 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-sky-600 text-white font-semibold hover:from-cyan-400 hover:to-sky-500 transition-all text-center shadow-lg shadow-cyan-500/25"
+                className="px-7 py-3 rounded-md bg-[#fcd535] text-[#181a20] font-semibold hover:bg-[#f0b90b] transition-colors text-center"
               >
                 Lihat Portfolio
               </a>
               <a
                 href="#kontak"
-                className="px-7 py-3 rounded-lg border border-slate-300 dark:border-white/10 text-slate-700 dark:text-slate-300 hover:border-slate-400 dark:hover:border-white/20 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200/50 dark:hover:bg-white/5 font-semibold transition-all text-center"
+                className="px-7 py-3 rounded-md border border-[#eaecef] dark:border-[#2b3139] bg-transparent dark:bg-[#1e2329] text-[#181a20] dark:text-[#eaecef] hover:border-[#cdd1d6] dark:hover:border-[#3a4048] font-semibold transition-all text-center"
               >
                 Hubungi Saya
               </a>
             </div>
 
-            <div className="grid grid-cols-3 gap-4 pt-8 max-w-md">
-              {stats.map((s) => (
-                <div
-                  key={s.label}
-                  className="border-l border-slate-300 dark:border-white/10 pl-4"
-                >
-                  <p className="text-2xl font-bold text-slate-900 dark:text-white">
-                    {s.value}
-                  </p>
-                  <p className="text-xs text-slate-500 dark:text-slate-500 mt-1">
-                    {s.label}
-                  </p>
+            <div className="flex items-center flex-wrap gap-x-8 gap-y-3 pt-8 border-t border-[#eaecef] dark:border-[#2b3139] max-w-xl">
+              {stats.map((s, i) => (
+                <div key={s.label} className="flex items-center gap-8">
+                  <div>
+                    <p className="text-2xl font-bold text-[#fcd535] font-mono leading-none">
+                      {s.value}
+                    </p>
+                    <p className="text-xs text-[#707a8a] mt-1.5">{s.label}</p>
+                  </div>
+                  {i < stats.length - 1 && (
+                    <span className="w-px h-8 bg-[#eaecef] dark:bg-[#2b3139]"></span>
+                  )}
                 </div>
               ))}
             </div>
@@ -280,21 +243,24 @@ export default function App() {
 
           <div className="order-1 lg:order-2 lg:col-span-2 flex justify-center">
             <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-tr from-cyan-300/20 to-sky-300/20 dark:from-cyan-500/20 dark:to-sky-500/20 rounded-3xl blur-2xl"></div>
-              <div className="relative">
-                <img
-                  src={IMG}
-                  alt="Carles Marvin"
-                  className="relative rounded-2xl w-full max-w-sm h-auto border border-slate-200 dark:border-white/10 shadow-2xl"
-                />
-                <div className="absolute -bottom-4 -left-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-slate-200 dark:border-white/10 rounded-xl px-4 py-3 shadow-xl">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-cyan-500 dark:bg-cyan-400 animate-pulse"></div>
-                    <span className="text-xs font-medium text-slate-700 dark:text-slate-300">
-                      Full-Stack Dev
-                    </span>
-                  </div>
+              <img
+                src={IMG}
+                alt="Carles Marvin"
+                className="relative rounded-xl w-full max-w-sm h-auto border border-[#eaecef] dark:border-[#2b3139]"
+              />
+              <div className="absolute -bottom-4 -left-4 bg-white dark:bg-[#1e2329] border border-[#eaecef] dark:border-[#2b3139] rounded-lg px-4 py-3">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-[#fcd535] animate-pulse"></div>
+                  <span className="text-xs font-medium text-[#181a20] dark:text-[#eaecef]">
+                    Full-Stack Dev
+                  </span>
                 </div>
+              </div>
+              <div className="absolute -top-4 -right-4 bg-[#fcd535] text-[#181a20] rounded-lg px-3 py-2 shadow-sm">
+                <p className="text-xs font-bold leading-none">3+ Tahun</p>
+                <p className="text-[10px] font-medium mt-1 opacity-70">
+                  Pengalaman
+                </p>
               </div>
             </div>
           </div>
@@ -303,35 +269,34 @@ export default function App() {
 
       <section
         id="tentang"
-        className="py-24 border-t border-slate-200 dark:border-white/5 relative"
+        className="py-16 border-t border-[#eaecef] dark:border-[#2b3139] relative"
       >
         <div className="max-w-6xl mx-auto px-6">
           <div className="mb-16 max-w-2xl">
-            <p className="text-sm font-medium text-cyan-600 dark:text-cyan-400 tracking-widest uppercase mb-3">
+            <p className="text-sm font-semibold text-[#fcd535] tracking-widest uppercase mb-3">
               Tentang Saya
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#181a20] dark:text-white tracking-tight">
               Menggabungkan kreativitas dengan teknologi
             </h2>
-            <div className="w-12 h-0.5 bg-cyan-500 dark:bg-cyan-500 mt-6"></div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
             <div className="lg:col-span-2 space-y-6">
               <div className="space-y-4">
-                <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                <p className="text-[#707a8a] dark:text-[#929aa5] leading-relaxed">
                   Perkenalkan, saya{" "}
-                  <span className="font-semibold text-slate-900 dark:text-slate-200">
+                  <span className="font-semibold text-[#181a20] dark:text-[#eaecef]">
                     Carles Marvin
                   </span>
                   , seorang{" "}
-                  <span className="font-semibold text-cyan-600 dark:text-cyan-400">
+                  <span className="font-semibold text-[#fcd535]">
                     Full-Stack & App Developer
                   </span>{" "}
                   dengan pengalaman dalam membangun aplikasi web dan mobile yang
                   modern, scalable, dan user-friendly.
                 </p>
-                <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                <p className="text-[#707a8a] dark:text-[#929aa5] leading-relaxed">
                   Saya berkomitmen untuk memberikan kode yang bersih,
                   maintainable, dan mengikuti best practices terbaru dalam
                   setiap proyek yang saya kerjakan.
@@ -358,18 +323,16 @@ export default function App() {
                 ].map((c) => (
                   <div
                     key={c.title}
-                    className="flex items-center gap-4 p-4 bg-slate-50 dark:bg-white/[0.02] rounded-xl border border-slate-200 dark:border-white/5 hover:border-slate-300 dark:hover:border-white/10 hover:bg-slate-100 dark:hover:bg-white/[0.04] transition-all"
+                    className="flex items-center gap-4 p-4 bg-[#fafafa] dark:bg-[#1e2329] rounded-lg border border-[#eaecef] dark:border-[#2b3139] hover:border-[#cdd1d6] dark:hover:border-[#3a4048] transition-all"
                   >
-                    <div className="w-10 h-10 rounded-lg bg-slate-200 dark:bg-white/5 flex items-center justify-center text-lg">
+                    <div className="w-10 h-10 rounded-md bg-white dark:bg-[#2b3139] flex items-center justify-center text-lg">
                       {c.icon}
                     </div>
                     <div>
-                      <p className="font-semibold text-slate-900 dark:text-slate-200 text-sm">
+                      <p className="font-semibold text-[#181a20] dark:text-[#eaecef] text-sm">
                         {c.title}
                       </p>
-                      <p className="text-slate-500 dark:text-slate-500 text-xs">
-                        {c.desc}
-                      </p>
+                      <p className="text-[#707a8a] text-xs">{c.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -379,43 +342,49 @@ export default function App() {
             <div className="lg:col-span-3 space-y-8">
               {skillCategories.map((cat) => (
                 <div key={cat.category}>
-                  <h3 className="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-4 flex items-center gap-2">
-                    <span className="w-1 h-4 rounded-full bg-gradient-to-b from-cyan-500 to-sky-600 dark:from-cyan-400 dark:to-sky-500"></span>
+                  <h3 className="text-xs font-semibold text-[#707a8a] uppercase tracking-widest mb-4 flex items-center gap-2">
+                    <span className="w-1 h-4 rounded-full bg-[#fcd535]"></span>
                     {cat.category}
                   </h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {cat.skills.map((s) => (
-                      <div
-                        key={s.name}
-                        className="bg-slate-50 dark:bg-white/[0.02] border border-slate-200 dark:border-white/5 rounded-lg p-4 hover:border-slate-300 dark:hover:border-white/10 transition-all"
-                      >
-                        <div className="flex justify-between items-center mb-3">
-                          <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                  <div className="bg-[#fafafa] dark:bg-[#1e2329] border border-[#eaecef] dark:border-[#2b3139] rounded-lg divide-y divide-[#eaecef] dark:divide-[#2b3139]">
+                    {cat.skills.map((s) => {
+                      const pct =
+                        s.level === "Expert"
+                          ? "100%"
+                          : s.level === "Advanced"
+                            ? "80%"
+                            : s.level === "Intermediate"
+                              ? "60%"
+                              : "40%";
+                      return (
+                        <div
+                          key={s.name}
+                          className="flex items-center justify-between gap-4 px-4 py-3"
+                        >
+                          <span className="text-sm font-medium text-[#181a20] dark:text-[#eaecef]">
                             {s.name}
                           </span>
-                          <span
-                            className={`text-[10px] font-semibold px-2 py-0.5 rounded-full uppercase tracking-wide border ${levelTextColor[s.level]}`}
-                          >
-                            {s.level}
-                          </span>
-                        </div>
-                        <div className="w-full bg-slate-200 dark:bg-white/5 rounded-full h-1">
-                          <div
-                            className={`h-1 rounded-full transition-all duration-700 ${levelColor[s.level]}`}
-                            style={{
-                              width:
+                          <div className="flex items-center gap-3 flex-shrink-0">
+                            <span
+                              className={`text-[10px] font-semibold px-2 py-0.5 rounded-full uppercase tracking-wide border ${levelTextColor[s.level]}`}
+                            >
+                              {s.level}
+                            </span>
+                            <span
+                              className={`text-xs font-mono font-semibold w-10 text-right ${
                                 s.level === "Expert"
-                                  ? "100%"
+                                  ? "text-[#fcd535]"
                                   : s.level === "Advanced"
-                                    ? "80%"
-                                    : s.level === "Intermediate"
-                                      ? "60%"
-                                      : "40%",
-                            }}
-                          />
+                                    ? "text-[#0ecb81]"
+                                    : "text-[#707a8a]"
+                              }`}
+                            >
+                              {pct}
+                            </span>
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
                 </div>
               ))}
@@ -426,66 +395,67 @@ export default function App() {
 
       <section
         id="projek"
-        className="py-24 border-t border-slate-200 dark:border-white/5 bg-slate-50 dark:bg-gradient-to-b dark:from-slate-950 dark:to-slate-900/50"
+        className="py-16 border-t border-[#eaecef] dark:border-[#2b3139] bg-[#fafafa] dark:bg-[#0b0e11]"
       >
         <div className="max-w-6xl mx-auto px-6">
           <div className="mb-16 max-w-2xl">
-            <p className="text-sm font-medium text-cyan-600 dark:text-cyan-400 tracking-widest uppercase mb-3">
+            <p className="text-sm font-semibold text-[#fcd535] tracking-widest uppercase mb-3">
               Portfolio
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#181a20] dark:text-white tracking-tight">
               Projek Unggulan
             </h2>
-            <p className="text-slate-600 dark:text-slate-400 text-lg mt-4">
+            <p className="text-[#707a8a] dark:text-[#929aa5] text-lg mt-4">
               Karya terbaik yang menunjukkan kemampuan dan passion saya dalam
               pengembangan web dan mobile.
             </p>
-            <div className="w-12 h-0.5 bg-cyan-500 dark:bg-cyan-500 mt-6"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+          <div className="bg-white dark:bg-[#1e2329] border border-[#eaecef] dark:border-[#2b3139] rounded-xl divide-y divide-[#eaecef] dark:divide-[#2b3139] overflow-hidden">
             {projects.map((p) => (
               <div
                 key={p.title}
-                className="group bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/5 rounded-2xl overflow-hidden hover:border-slate-300 dark:hover:border-white/15 transition-all duration-300 flex flex-col"
+                className="group flex flex-col sm:flex-row sm:items-center gap-4 p-4 sm:p-5 hover:bg-[#fafafa] dark:hover:bg-[#2b3139]/40 transition-colors"
               >
-                <div className="relative w-full h-52 bg-slate-100 dark:bg-slate-950 border-b border-slate-200 dark:border-white/5 flex items-center justify-center p-6 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-100 dark:from-cyan-500/5 to-transparent"></div>
+                <div className="w-full h-40 sm:w-40 sm:h-28 flex-shrink-0 rounded-lg bg-[#fafafa] dark:bg-[#0b0e11] border border-[#eaecef] dark:border-[#2b3139] overflow-hidden">
                   <img
                     src={p.img}
                     alt={p.title}
-                    className="relative w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover"
                   />
-                  <span className="absolute top-3 right-3 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-300 text-[10px] font-semibold px-2.5 py-1 rounded-full uppercase tracking-wide">
-                    {p.type}
-                  </span>
                 </div>
 
-                <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
-                    {p.title}
-                  </h3>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4 flex-grow">
+                <div className="flex-grow min-w-0">
+                  <div className="flex items-center gap-2 flex-wrap mb-1">
+                    <h3 className="text-base font-bold text-[#181a20] dark:text-white group-hover:text-[#fcd535] transition-colors">
+                      {p.title}
+                    </h3>
+                    <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full uppercase tracking-wide bg-[#f5f5f5] dark:bg-[#2b3139] text-[#707a8a]">
+                      {p.type}
+                    </span>
+                  </div>
+                  <p className="text-[#707a8a] dark:text-[#929aa5] text-sm leading-relaxed mb-2 max-w-2xl">
                     {p.desc}
                   </p>
-
-                  <div className="flex flex-wrap gap-1.5 mb-4">
+                  <div className="flex flex-wrap gap-1.5">
                     {p.tags.map((t) => (
                       <span
                         key={t}
-                        className="bg-slate-100 dark:bg-white/5 text-slate-600 dark:text-slate-400 text-xs font-medium px-2.5 py-1 rounded-md border border-slate-200 dark:border-white/5"
+                        className="bg-[#f5f5f5] dark:bg-[#2b3139] text-[#707a8a] dark:text-[#929aa5] text-xs font-medium px-2 py-0.5 rounded-md"
                       >
                         {t}
                       </span>
                     ))}
                   </div>
+                </div>
 
+                <div className="flex-shrink-0 sm:ml-4">
                   {p.code !== "#" ? (
                     <a
                       href={p.code}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-cyan-600 dark:text-cyan-400 hover:text-cyan-500 dark:hover:text-cyan-300 font-semibold text-sm transition-colors mt-auto"
+                      className="inline-flex items-center gap-1.5 text-[#fcd535] hover:text-[#f0b90b] font-semibold text-sm transition-colors whitespace-nowrap"
                     >
                       <svg
                         className="w-4 h-4"
@@ -503,7 +473,7 @@ export default function App() {
                       Lihat Kode
                     </a>
                   ) : (
-                    <span className="text-slate-400 dark:text-slate-600 text-xs mt-auto flex items-center gap-1.5">
+                    <span className="text-[#929aa5] dark:text-[#707a8a] text-xs flex items-center gap-1.5 whitespace-nowrap">
                       <svg
                         className="w-3.5 h-3.5"
                         fill="none"
@@ -529,26 +499,23 @@ export default function App() {
 
       <section
         id="kontak"
-        className="py-24 border-t border-slate-200 dark:border-white/5 relative overflow-hidden"
+        className="py-16 border-t border-[#eaecef] dark:border-[#2b3139] relative overflow-hidden"
       >
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-cyan-300/20 dark:bg-cyan-600/5 rounded-full blur-3xl pointer-events-none"></div>
-
         <div className="max-w-4xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
-            <p className="text-sm font-medium text-cyan-600 dark:text-cyan-400 tracking-widest uppercase mb-3">
+            <p className="text-sm font-semibold text-[#fcd535] tracking-widest uppercase mb-3">
               Kontak
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#181a20] dark:text-white tracking-tight">
               Mari Berkolaborasi
             </h2>
-            <p className="text-slate-600 dark:text-slate-400 text-lg max-w-xl mx-auto mt-4">
+            <p className="text-[#707a8a] dark:text-[#929aa5] text-lg max-w-xl mx-auto mt-4">
               Saya selalu terbuka untuk mendiskusikan peluang baru dan proyek
               menarik.
             </p>
-            <div className="w-12 h-0.5 bg-cyan-500 dark:bg-cyan-500 mx-auto mt-6"></div>
           </div>
 
-          <div className="bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/5 rounded-2xl p-6 md:p-8 backdrop-blur-sm shadow-lg shadow-slate-200/50 dark:shadow-none">
+          <div className="bg-white dark:bg-[#1e2329] border border-[#eaecef] dark:border-[#2b3139] rounded-xl p-6 md:p-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {contacts.map((c) => (
                 <a
@@ -556,11 +523,11 @@ export default function App() {
                   href={c.href}
                   target={c.href.startsWith("mailto") ? undefined : "_blank"}
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 bg-slate-50 dark:bg-white/[0.02] border border-slate-200 dark:border-white/5 hover:border-slate-300 dark:hover:border-white/15 hover:bg-slate-100 dark:hover:bg-white/[0.04] rounded-xl transition-all group"
+                  className="flex items-center gap-4 p-4 bg-[#fafafa] dark:bg-[#2b3139]/40 border border-[#eaecef] dark:border-[#2b3139] hover:border-[#fcd535]/40 rounded-lg transition-all group"
                 >
-                  <div className="w-11 h-11 rounded-lg bg-slate-200 dark:bg-white/5 border border-slate-200 dark:border-white/5 group-hover:bg-cyan-100 dark:group-hover:bg-cyan-500/10 group-hover:border-cyan-200 dark:group-hover:border-cyan-500/30 flex items-center justify-center flex-shrink-0 transition-all">
+                  <div className="w-11 h-11 rounded-md bg-white dark:bg-[#1e2329] border border-[#eaecef] dark:border-[#2b3139] group-hover:bg-[#fcd535]/10 group-hover:border-[#fcd535]/40 flex items-center justify-center flex-shrink-0 transition-all">
                     <svg
-                      className="w-5 h-5 text-slate-500 group-hover:text-cyan-600 dark:text-slate-400 dark:group-hover:text-cyan-400 transition-colors"
+                      className="w-5 h-5 text-[#707a8a] group-hover:text-[#fcd535] transition-colors"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -574,10 +541,10 @@ export default function App() {
                     </svg>
                   </div>
                   <div className="min-w-0">
-                    <p className="text-xs font-medium text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-0.5">
+                    <p className="text-xs font-medium text-[#707a8a] uppercase tracking-wider mb-0.5">
                       {c.label}
                     </p>
-                    <p className="text-sm font-medium text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white transition-colors truncate">
+                    <p className="text-sm font-medium text-[#181a20] dark:text-[#eaecef] group-hover:text-[#fcd535] transition-colors truncate">
                       {c.value}
                     </p>
                   </div>
