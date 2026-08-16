@@ -5,7 +5,6 @@ import {
   Code,
   Terminal,
   DeviceMobile,
-  GithubLogo,
   LinkedinLogo,
   InstagramLogo,
   WhatsappLogo,
