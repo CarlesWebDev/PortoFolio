@@ -106,7 +106,8 @@ export default function ProjectDetail() {
                 ) : (
                   <div className="w-full aspect-[4/3] border border-line flex items-center justify-center">
                     <span className="label-mono text-muted text-center px-4">
-                      Screenshot menyusul — tambahkan di src/assets lalu isi field `image` di src/data/projects.ts
+                      {/* Screenshot menyusul — tambahkan di src/assets lalu isi field `image` di src/data/projects.ts */}
+                      Image Not Found
                     </span>
                   </div>
                 )}
