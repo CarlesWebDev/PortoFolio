@@ -1,10 +1,22 @@
 <!doctype html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
-<link rel="icon" type="image/png" href="/RandomImage.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CharlesDev</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta
+      name="description"
+      content="Bikin website yang rapi, cepat, dan nggak kelihatan kayak template. Portofolio Carles Marvin."
+    />
+    <title>Carles Marvin — Web Developer</title>
+    <script>
+    
+      (function () {
+        var t = localStorage.getItem("theme");
+        if (t === "dark") document.documentElement.classList.add("dark");
+        if (t === "light") document.documentElement.classList.add("light");
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
