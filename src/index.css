@@ -12,35 +12,34 @@
 }
 
 :root {
-  /* Warna */
+  
   --bg: #f4f1ea;
   --fg: #111111;
   --muted: #6b675f;
   --line: #d9d4c7;
   --accent: #ff4d00;
 
-  /* Font */
+  
   --font-display: "Instrument Serif", serif;
   --font-body: "Geist Sans", system-ui, sans-serif;
   --font-mono: "Geist Mono", ui-monospace, monospace;
 
-  /* Skala teks (fluid) */
+  
   --text-hero: clamp(3.5rem, 12vw, 11rem);
   --text-h2: clamp(2rem, 5vw, 4rem);
   --text-body: 1.0625rem;
   --text-label: 0.75rem;
 
-  /* Spacing */
+  
   --space-section: clamp(5rem, 12vw, 10rem);
   --space-gutter: clamp(1rem, 3vw, 2rem);
 
-  /* Motion */
+  
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --dur-fast: 200ms;
   --dur-base: 500ms;
 }
 
-/* Mode gelap: ikut sistem... */
 @media (prefers-color-scheme: dark) {
   :root:not(.light) {
     --bg: #0c0c0c;
@@ -51,7 +50,6 @@
   }
 }
 
-/* ...atau dipaksa lewat toggle (tersimpan di localStorage) */
 :root.dark {
   --bg: #0c0c0c;
   --fg: #ededed;
@@ -91,7 +89,6 @@ body {
   outline-offset: 3px;
 }
 
-/* Utilitas tipografi editorial */
 .font-display {
   font-family: var(--font-display);
 }
@@ -111,7 +108,6 @@ body {
   padding-block: var(--space-section);
 }
 
-/* CTA underline animasi */
 .link-underline {
   position: relative;
 }
@@ -132,7 +128,6 @@ body {
   transform: scaleX(0);
 }
 
-/* Animasi masuk hero per baris */
 @keyframes rise {
   from {
     opacity: 0;

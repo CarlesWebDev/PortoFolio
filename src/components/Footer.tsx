@@ -1,14 +1,10 @@
 import { Link } from "react-router-dom";
-
+import { useCmsContent } from "../lib/cms";
 export default function Footer() {
-  return (
-    <footer className="border-t border-line">
+    const { settings } = useCmsContent();
+    return (<footer className="border-t border-line">
       <div className="gutter max-w-6xl mx-auto py-16">
-        <Link
-          to="/"
-          className="font-display leading-none tracking-tight block hover:opacity-80 transition-opacity"
-          style={{ fontSize: "clamp(2.5rem, 9vw, 7rem)" }}
-        >
+        <Link to="/" className="font-display leading-none tracking-tight block hover:opacity-80 transition-opacity" style={{ fontSize: "clamp(2.5rem, 9vw, 7rem)" }}>
           Carles Marvin
         </Link>
 
@@ -17,10 +13,7 @@ export default function Footer() {
             <p className="label-mono text-muted">
               Tangerang Selatan, Indonesia
             </p>
-            <a
-              href="mailto:charlesmarvin4321@gmail.com"
-              className="label-mono transition-colors "
-            >
+            <a href="mailto:charlesmarvin4321@gmail.com" className="label-mono transition-colors ">
               charlesmarvin4321@gmail.com
             </a>
           </div>
@@ -29,12 +22,12 @@ export default function Footer() {
             <p className="label-mono text-muted">
               © {new Date().getFullYear()} Carles Marvin
             </p>
+            {settings?.footer_text && (<p className="label-mono text-muted">{settings.footer_text}</p>)}
             <p className="label-mono text-muted text-xs">
               Built with React & Tailwind
             </p>
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>);
 }
